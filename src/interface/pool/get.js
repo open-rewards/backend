@@ -4,7 +4,7 @@ const { Joi, validate } = validator;
 
 const getValidation = {
   query: Joi.object({
-    userAddress: Joi.string().required(),
+    userAddress: Joi.string().optional(),
   }),
 };
 
