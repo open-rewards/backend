@@ -12,6 +12,6 @@ const create = require('./create');
 const get = require('./get');
 
 router.post('/create', asyncHandler(canCreate), asyncHandlerArray(create));
-router.post('/get', asyncHandler(canGet), asyncHandlerArray(get));
+router.get('/get', asyncHandler(canGet), asyncHandlerArray(get));
 
 module.exports = router;
