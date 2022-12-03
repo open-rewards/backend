@@ -1,8 +1,5 @@
 const { validator } = require("../middleware");
 const { Joi, validate } = validator;
-const NodeCache = require('node-cache');
-const repoNameMapping = new NodeCache();
-const contractAddressMapping = new NodeCache();
 
 const createValidation = {
   body: Joi.object({

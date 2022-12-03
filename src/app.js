@@ -12,6 +12,7 @@ const helmet = require('helmet');
 
 const router = require('./interface');
 const { errorHandler } = require('./interface/middleware');
+require('./infra/database');
 
 // Express App
 const app = express();

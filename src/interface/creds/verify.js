@@ -5,7 +5,7 @@ const { Joi, validate } = validator;
 const verifyValidation = {
   body: Joi.object({
     nonce: Joi.number().required(),
-    code: Joi.string().required(),
+    accessToken: Joi.string().required(),
     address: Joi.string().required(),
     message: Joi.string().required(),
     signature: Joi.string().required(),
@@ -13,10 +13,10 @@ const verifyValidation = {
 };
 
 async function verify(req, res) {
-  let { code, nonce, address, message, signature } = req.body;
+  let { accessToken, nonce, address, message, signature } = req.body;
 
   const githubVerifiedData = await github.verify({
-    code,
+    accessToken,
   });
 
   console.log(githubVerifiedData);
