@@ -1,5 +1,5 @@
-async function canCreate(req, res, next) {
+async function canVerify(req, res, next) {
   next();
 }
 
-module.exports = canCreate;
+module.exports = canVerify;
