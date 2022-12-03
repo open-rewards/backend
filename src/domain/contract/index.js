@@ -5,7 +5,7 @@ class OpenRewardsContract {
     constructor(contractAddress) {
         this.contractAddress = contractAddress;
         this.contractABI = abi;
-        this.networkProviderUrl = config.GNOSIS_MAINNET_RPC_URL;
+        this.networkProviderUrl = config.ALCHEMY_RPC_URL;
         this.networkProvider = new ethers.providers.JsonRpcProvider(this.networkProviderUrl);
         this.contractInstance = new ethers.Contract(this.contractAddress, this.contractABI, this.networkProvider);
     }

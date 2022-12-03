@@ -6,6 +6,7 @@ const verifyValidation = {
   body: Joi.object({
     nonce: Joi.number().required(),
     accessToken: Joi.string().required(),
+    contractAddress: Joi.string().required(),
     address: Joi.string().required(),
     message: Joi.string().required(),
     signature: Joi.string().required(),
