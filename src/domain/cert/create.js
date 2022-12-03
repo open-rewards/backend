@@ -6,8 +6,9 @@ async function create({ nonce, username, address, contractAddress }) {
   let privateKey = config.TRUSTED_SETUP_PRIVATE_KEY;
   let wallet = new ethers.Wallet(privateKey);
   const contractInstance = new Contract(contractAddress);
-  const message = contractInstance.getMessageHash(address, username, nonce);
+  const message = await contractInstance.getMessageHash(address, username, nonce);
   const signature = await wallet.signMessage(message);
+  console.log({ nonce, username, address, signature });
   return { nonce, username, address, signature };
 }
 
