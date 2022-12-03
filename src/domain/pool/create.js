@@ -7,7 +7,7 @@ async function create({
   stars,
   username,
   userAddress,
-  contractAddresss,
+  contractAddress,
   safeContractAddress,
 }) {
   const logs = await new Log({
@@ -17,7 +17,7 @@ async function create({
     stars,
     username,
     userAddress,
-    contractAddresss,
+    contractAddress,
     safeContractAddress,
   }).save();
   return logs.safeObject();

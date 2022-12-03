@@ -10,7 +10,7 @@ _log.schema = new Schema({
   stars: { type: Number },
   username: { type: String },
   userAddress: { type: String },
-  contractAddresss: { type: String },
+  contractAddress: { type: String },
   safeContractAddress: { type: String },
   timeStamp: { type: Date, required: true, default: Date.now },
 });
@@ -29,7 +29,7 @@ _log.schema.methods.safeObject = function () {
     'stars',
     'username',
     'userAddress',
-    'contractAddresss',
+    'contractAddress',
     'safeContractAddress',
     'timeStamp',
   ];

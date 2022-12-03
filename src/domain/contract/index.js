@@ -1,3 +1,4 @@
+const config = require('../../../config');
 const abi = require('./abi.json');
 const { ethers } = require("ethers");
 

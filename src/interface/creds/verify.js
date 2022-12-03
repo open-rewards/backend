@@ -14,7 +14,7 @@ const verifyValidation = {
 };
 
 async function verify(req, res) {
-  let { accessToken, nonce, address, message, signature } = req.body;
+  let { accessToken, nonce, address, message, signature, contractAddress } = req.body;
 
   const githubVerifiedData = await github.verify({
     accessToken,

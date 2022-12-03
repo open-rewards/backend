@@ -23,7 +23,7 @@ async function create(req, res) {
     stars,
     username,
     userAddress,
-    contractAddresss,
+    contractAddress,
     safeContractAddress,
   } = req.body;
   const data = await pool.create({
@@ -33,7 +33,7 @@ async function create(req, res) {
     stars,
     username,
     userAddress,
-    contractAddresss,
+    contractAddress,
     safeContractAddress,
   })
   res.json(data);
