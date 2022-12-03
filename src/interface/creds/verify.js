@@ -32,6 +32,7 @@ async function verify(req, res) {
     address: accountVerifiedData.address,
     username: githubVerifiedData.username,
     nonce,
+    contractAddress,
   });
 
   res.json(createdCert);
