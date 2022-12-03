@@ -9,8 +9,8 @@ _log.schema = new Schema({
   contributors: { type: Number },
   stars: { type: Number },
   username: { type: String },
-  userAddress: { type: String },
-  contractAddress: { type: String },
+  userAddress: { type: String, lowercase: true },
+  contractAddress: { type: String, lowercase: true },
   safeContractAddress: { type: String },
   timeStamp: { type: Date, required: true, default: Date.now },
 });
