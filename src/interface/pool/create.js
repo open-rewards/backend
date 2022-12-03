@@ -1,3 +1,4 @@
+const { pool } = require('../../domain');
 const { validator } = require("../middleware");
 const { Joi, validate } = validator;
 
@@ -25,7 +26,7 @@ async function create(req, res) {
     contractAddresss,
     safeContractAddress,
   } = req.body;
-  res.json({
+  const data = await pool.create({
     repoUrl,
     repoName,
     contributors,
@@ -34,7 +35,8 @@ async function create(req, res) {
     userAddress,
     contractAddresss,
     safeContractAddress,
-  });
+  })
+  res.json(data);
 }
 
 module.exports = [validate(createValidation), create];

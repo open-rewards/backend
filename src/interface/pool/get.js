@@ -1,21 +1,17 @@
+const { pool } = require('../../domain');
 const { validator } = require("../middleware");
 const { Joi, validate } = validator;
-const NodeCache = require('node-cache');
-const repoNameMapping = new NodeCache();
-const contractAddressMapping = new NodeCache();
 
-const createValidation = {
+const getValidation = {
   query: Joi.object({
-    repoName: Joi.string().required(),
-    contractAddress: Joi.string().required(),
+    userAddress: Joi.string().required(),
   }),
 };
 
-async function create(req, res) {
-  let { repoName, contractAddresss } = req.body;
-  repoNameMapping.set(repoName, contractAddresss);
-  contractAddressMapping.set(contractAddresss, repoName);
-  res.json({ repoName, contractAddresss });
+async function get(req, res) {
+  let { userAddress } = req.body;
+  const data = await pool.get({ userAddress });
+  res.json(data);
 }
 
-module.exports = [validate(createValidation), create];
+module.exports = [validate(getValidation), get];
